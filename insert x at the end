@@ -1,0 +1,20 @@
+class Node:
+    def __init__(self, data):
+        self.data, self.next = data, None
+
+head = Node(1)
+head.next = Node(2)
+head.next.next = Node(3)
+head.next.next.next = Node(4)
+
+x = 5
+curr = head
+while curr.next:     
+    curr = curr.next
+curr.next = Node(x)
+
+p = head
+while p:
+    print(p.data, end=" → ")
+    p = p.next
+print("null")
